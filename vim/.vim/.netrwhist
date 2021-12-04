@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/shahriyar/Documents/Spring Term/cs265/assignments/assn2'
+let g:netrw_dirhist_5='/home/shahriyar/Documents/Spring Term/cs265/labs/lab09/dbg'
+let g:netrw_dirhist_4='/home/shahriyar/Documents/Spring Term/cs265/activities/9'
+let g:netrw_dirhist_3='/home/shahriyar/Documents/shahriyar.xyz/shayxyz/templates'
+let g:netrw_dirhist_2='/home/shahriyar/Documents/shahriyar.xyz/shayxyz'
+let g:netrw_dirhist_1='/home/shahriyar/Documents/shahriyar.xyz'
