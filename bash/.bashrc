@@ -68,27 +68,13 @@ export EDITOR="vim"
 #export TERM="screen-256color"
 
 #Aliases
-## Creature comforts
-alias untar="tar -xvzf"
-alias ls='ls --color=auto'
-alias rbash="exec bash"
-alias bashrc="vim ~/.bashrc; rbash"
-alias vimrc="vim ~/.vim/vimrc"
-alias hkrc="vim ~/.config/sxhkd/sxhkdrc"
-alias feh="feh -x --scale-down --auto-zoom"
-alias du="du -h"
-alias n="nnn"
-alias l="lsd"
-alias open='xdg-open "$(fzf)"'
-
-# SYSTEM DEPENDENT
-alias tuxmount="sshfs shs96@tux.cs.drexel.edu:/home/shs96/public_html ~/mount/tux"
-alias tuxumount="fusermount3 -u ~/mount/tux"
-alias tux="ssh shs96@tux.cs.drexel.edu"
-alias py3="python3"
-alias pimount="sshfs pi@10.0.0.4:/home/pi/programming/python ~/mount/pi"
-alias piumount="fusermount3 -u ~/mount/pi"
-
+ALIAS_PATH="$HOME/.config/bash/.aliases"
+if [ -f $ALIAS_PATH ]; then
+    source $ALIAS_PATH
+    echo "Aliases Loaded"
+else
+    echo "could not find"
+fi
 
 # DotNet Stuff
 # bash parameter completion for the dotnet CLI
