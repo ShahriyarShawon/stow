@@ -8,21 +8,16 @@ au FocusGained,BufEnter * checktime
 "Leader key allows extra key combos
 let mapleader = ","
 
+" Set Paste Mode
+set pastetoggle=<F2>
+
+
 " jump to jump point, delete it, and go into insert mode
 nnoremap <space><space> <esc>/<jp><cr>4xi
 " Fast Saving
 nmap <leader>w <Esc>:w<cr>
 " Fast Saving and exit
 nmap <leader>q <Esc>:wq<cr>
-" Skeleton for LaTeX document
-nmap <leader>l i\documentclass{article}<cr><cr>
-            \\title{<jp>}<cr>
-            \\date{<jp>}<cr>
-            \\author{Shahriyar Shawon}<cr><cr>
-            \\begin{document}<cr>
-            \\maketitle<cr>
-            \\newpage<cr><cr>
-            \\end{document}
 
 nnoremap j jzz
 nnoremap k kzz

@@ -1,42 +1,42 @@
 ## Rofi / sxhkd Shortcuts 
 # refresh sxhkd
-super + r
+alt + r
     pkill -SIGUSR1 sxhkd
 
 # rofi emoji
-super + e
+alt + e
     emojis.sh
     #rofi -show emoji -modi emoji 
 
 # show all apps rofi
-super + space 
+alt + space 
     rofi -show drun -lines 10 -icon-theme "Papirus" -show-icons
     # rofi -show drun 
 
 ## App Shortcuts
 
 # Brave
-super + b
+alt + b
     brave
 
 # Terminal
-super + Return
+alt + Return
     alacritty
 
 # Thunar
-super + t
+alt + t
     thunar
 
 # screenshot area and copy and save and preview 
-super + Print
+alt + Print
     flameshot gui
 
 # gif recorder
-super + shift + Print
+shift + Print
     peek
 
 ## Launch scripts
-super + s
+alt + shift + s
     ls /home/shahriyar/scripts | bash $(rofi -dmenu)
 
 ############## BSPWM #######################

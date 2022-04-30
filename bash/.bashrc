@@ -4,6 +4,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+
+# Shahriyar variables
+PREFIX="ʕ•́ᴥ•̀ʔっ"
+SYMBOL_OPTIONS=("☪" "א" "Δ" "Ψ" "㋯" "Ж" )
+SELECTED_SYMBOL=${SYMBOL_OPTIONS[$RANDOM % ${#SYMBOL_OPTIONS[@]}]}
+FINAL_PROMPT="$PREFIX$SELECTED_SYMBOL"
 # Shahriyars configs
 
 # get current branch in git repo
@@ -53,7 +59,7 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="\[\e[32m\]\`parse_git_branch\`\[\e[m\] \[\e[36m\]\w\[\e[m\] \[\e[35m\]\nλ \[\e[m\] "
+export PS1="\[\e[32m\]\`parse_git_branch\`\[\e[m\] \[\e[36m\]\w\[\e[m\] \[\e[35m\]\n${FINAL_PROMPT} \[\e[m\] "
 export LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=1;34;46:cd=1;34;43:su=1;30;41:sg=1;30;46:tw=1;30;42:ow=1;30;43"
 export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:$(go env GOPATH)/bin
@@ -71,28 +77,8 @@ export EDITOR="vim"
 ALIAS_PATH="$HOME/.config/bash/.aliases"
 if [ -f $ALIAS_PATH ]; then
     source $ALIAS_PATH
-    echo "Aliases Loaded"
 else
     echo "could not find"
 fi
 
-# DotNet Stuff
-# bash parameter completion for the dotnet CLI
-
-_dotnet_bash_complete()
-{
-  local word=${COMP_WORDS[COMP_CWORD]}
-
-  local completions
-  completions="$(dotnet complete --position "${COMP_POINT}" "${COMP_LINE}" 2>/dev/null)"
-  if [ $? -ne 0 ]; then
-    completions=""
-  fi
-
-  COMPREPLY=( $(compgen -W "$completions" -- "$word") )
-}
-
-export PATH="$PATH:~/.dotnet/tools"
-export DOTNET_CLI_TELEMETRY_OPOUT=1
-complete -f -F _dotnet_bash_complete dotnet
-pfetch
+. "$HOME/.cargo/env"
